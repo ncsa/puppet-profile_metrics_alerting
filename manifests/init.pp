@@ -53,7 +53,7 @@ class profile_metrics_alerting (
   class { 'grafana':
     cfg     => {
       alerting             => {
-        enabled => true,
+        enabled => false,
       },
       analytics            => {
         reporting => true,
@@ -113,6 +113,9 @@ class profile_metrics_alerting (
         from_name    => 'NCSA ICI Alert Engine',
         host         => 'localhost:25',
         skip_verify  => true,
+      },
+      unified_alerting     => {
+        enabled => true,
       },
       users                => {
         allow_sign_up    => false,
